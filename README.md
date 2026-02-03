@@ -1,100 +1,170 @@
-Spam Email Classifier
+📧 **Spam Email Classifier**
 
-A machine learning project to detect spam emails using Python, Scikit-learn, and Flask. The project trains a model on a Kaggle dataset of emails and provides a simple web interface to check if an email is spam or ham.
+A machine learning project to detect spam emails using Python, Scikit-learn, and Flask. This project automatically classifies emails as Spam or Ham to help users manage their inbox efficiently and securely.
 
-Features
+🚀** Project Motivation**
 
-Preprocesses email text (lowercase, remove punctuation, stopwords, numbers, HTML)
+Emails are an essential communication tool, but spam and unsolicited emails create several problems:
 
-Converts text to TF-IDF features
+Waste time and reduce productivity
 
-Trains Naive Bayes & Logistic Regression models
+Increase risk of phishing and scams
 
-Compares models using precision, recall, and F1-score
+Overload inboxes, making it hard to identify important emails
 
-Web interface using Flask for real-time email classification
+Goal: Build a solution that automatically identifies spam emails, helping users focus on important messages while minimizing risks.
 
-Dataset
+🎯** Problem Statement
+**
+Manually checking hundreds of emails every day is inefficient and error-prone. Traditional filters might not detect all spam types.
 
-This project uses the Kaggle email dataset:
+Solution:
 
-Columns: text (email content), spam (1 = spam, 0 = ham)
+Train a machine learning model to classify emails accurately
 
-You can download it from: Kaggle Spam Emails
+Provide a simple web interface for real-time predictions
 
-Folder Structure
+📂 **Dataset**
+
+Source: Kaggle Spam Emails
+
+Columns:
+
+text → full email content
+
+spam → 1 = spam, 0 = ham
+
+🛠** Methods & Implementation**
+1.** Preprocessing**
+
+Lowercasing text
+
+Removing punctuation, numbers, and HTML tags
+
+Removing stopwords
+
+Stemming words to their root form
+
+Reason: Reduces noise and keeps only meaningful words for classification.
+
+**2. Feature Extraction**
+
+Method: TF-IDF Vectorization
+
+Converts text to numerical features
+
+Highlights important words that are frequent in one email but rare in all emails
+
+Reason: Captures patterns that distinguish spam from ham without overemphasizing common words.
+
+**3. Machine Learning Models**
+
+Naive Bayes (MultinomialNB)
+
+Fast, interpretable, excellent for short spam messages
+
+Logistic Regression
+
+Models probability of spam
+
+Handles large feature sets and subtle patterns
+
+Effectiveness: Both models are widely used in text classification and show high accuracy for spam detection.
+
+**4. Web Interface**
+
+Built using Flask
+
+Users can paste email content and instantly get a Spam/Ham prediction
+
+**📈 Project Workflow**
+
+Load Dataset → Read emails from CSV
+
+Preprocess Text → Clean and stem words
+
+Vectorize Text → Convert to TF-IDF features
+
+Train Models → Naive Bayes & Logistic Regression
+
+Evaluate → Precision, Recall, F1-score
+
+Save Models → model.pkl & vectorizer.pkl
+
+Web App → Real-time email classification using Flask
+
+**💡 Key Outcomes / Delivery Report**
+
+Why we built it: Automate spam detection, improve inbox management, and reduce security risks.
+
+How it solves the problem: Uses ML to identify spam patterns and classify emails automatically.
+
+Methods used: Preprocessing, TF-IDF vectorization, Naive Bayes, Logistic Regression, Flask.
+
+Why these methods: Proven efficiency in text classification; lightweight and interpretable.
+
+Effectiveness: Can detect classic spam emails with high accuracy; professional or legitimate emails are correctly classified as Ham.
+
+**Future improvements:**
+
+Detect promotional emails separately
+
+Use deep learning for higher accuracy
+
+Multi-class classification (ham, spam, promotion, phishing)
+
+**📂 Folder Structure**
 spam-email-classifier/
 │
 ├── data/
-│   └── emails.csv             # Kaggle dataset
-├── notebooks/
-│   └── EDA.ipynb              # Optional: explore dataset
+│   └── emails.csv            # Kaggle dataset
 ├── src/
-│   ├── __init__.py            # empty file to make src a module
-│   ├── preprocess.py          # text cleaning functions
-│   ├── train.py               # train ML models
-│   └── predict.py             # predict new emails
+│   ├── preprocess.py         # text cleaning functions
+│   ├── train.py              # train ML models
+│   └── predict.py            # predict new emails
 ├── templates/
-│   └── index.html             # Flask web interface
-├── app.py                     # Flask app
-├── model.pkl                  # trained Naive Bayes model
-├── vectorizer.pkl             # TF-IDF vectorizer
-├── requirements.txt           # project dependencies
-└── README.md                  # this file
+│   └── index.html            # Flask web interface
+├── app.py                    # Flask app
+├── model.pkl                 # trained Naive Bayes model
+├── vectorizer.pkl            # TF-IDF vectorizer
+├── requirements.txt          # project dependencies
+└── README.md                 # this file
 
-Installation
+**⚡ Installation**
 
-Clone the repository:
+Clone repository:
 
-git clone <your-repo-url>
-cd spam-email-classifier
+git clone https://github.com/ummehabiba-m/Spam-Email-Classifier.git
+cd Spam-Email-Classifier
 
 
 Install dependencies:
 
 pip install -r requirements.txt
 
-Usage
-1. Train the model
+▶️ Usage
+Train the Model
 python src/train.py
 
-
-This will train the Naive Bayes and Logistic Regression models
-
-Saves the trained model as model.pkl and vectorizer as vectorizer.pkl in the project root
-
-2. Test predictions
+Test Prediction
 python src/predict.py
 
-
-Test the model with a sample email
-
-3. Run the Flask web app
+Run Web App
 python app.py
 
 
-Open your browser: http://127.0.0.1:5000/
+Open browser: http://127.0.0.1:5000/
 
-Paste an email and click Check to see if it’s Spam or Ham
+Paste an email → click Check → see Spam/Ham
 
-How it works
+**📊 Evaluation Metrics**
 
-Preprocessing: Removes stopwords, punctuation, numbers, HTML, and performs stemming
+Precision, Recall, F1-score
 
-Vectorization: Converts cleaned text to numerical features using TF-IDF
+Both models achieve high accuracy on the Kaggle dataset
 
-Modeling: Trains Naive Bayes and Logistic Regression models
+Naive Bayes is faster, Logistic Regression handles complex patterns
 
-Prediction: Web app takes input email, preprocesses, vectorizes, and predicts using the saved model
-
-Future Improvements
-
-Detect promotional emails separately
-
-Add deep learning-based classifier for higher accuracy
-
-Deploy online for public use
-
-License
+**📌 License**
 
 MIT License

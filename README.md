@@ -1,8 +1,8 @@
-📧 **Spam Email Classifier**
+📧 Spam Email Classifier
 
 A machine learning project to detect spam emails using Python, Scikit-learn, and Flask. This project automatically classifies emails as Spam or Ham to help users manage their inbox efficiently and securely.
 
-🚀** Project Motivation**
+🚀 Project Motivation
 
 Emails are an essential communication tool, but spam and unsolicited emails create several problems:
 
@@ -14,8 +14,8 @@ Overload inboxes, making it hard to identify important emails
 
 Goal: Build a solution that automatically identifies spam emails, helping users focus on important messages while minimizing risks.
 
-🎯** Problem Statement
-**
+🎯 Problem Statement
+
 Manually checking hundreds of emails every day is inefficient and error-prone. Traditional filters might not detect all spam types.
 
 Solution:
@@ -24,7 +24,7 @@ Train a machine learning model to classify emails accurately
 
 Provide a simple web interface for real-time predictions
 
-📂 **Dataset**
+📂 Dataset
 
 Source: Kaggle Spam Emails
 
@@ -34,8 +34,8 @@ text → full email content
 
 spam → 1 = spam, 0 = ham
 
-🛠** Methods & Implementation**
-1.** Preprocessing**
+🛠 Methods & Implementation
+1. Preprocessing
 
 Lowercasing text
 
@@ -47,7 +47,7 @@ Stemming words to their root form
 
 Reason: Reduces noise and keeps only meaningful words for classification.
 
-**2. Feature Extraction**
+2. Feature Extraction
 
 Method: TF-IDF Vectorization
 
@@ -57,7 +57,7 @@ Highlights important words that are frequent in one email but rare in all emails
 
 Reason: Captures patterns that distinguish spam from ham without overemphasizing common words.
 
-**3. Machine Learning Models**
+3. Machine Learning Models
 
 Naive Bayes (MultinomialNB)
 
@@ -71,13 +71,13 @@ Handles large feature sets and subtle patterns
 
 Effectiveness: Both models are widely used in text classification and show high accuracy for spam detection.
 
-**4. Web Interface**
+4. Web Interface
 
 Built using Flask
 
 Users can paste email content and instantly get a Spam/Ham prediction
 
-**📈 Project Workflow**
+📈 Project Workflow
 
 Load Dataset → Read emails from CSV
 
@@ -93,7 +93,7 @@ Save Models → model.pkl & vectorizer.pkl
 
 Web App → Real-time email classification using Flask
 
-**💡 Key Outcomes / Delivery Report**
+💡 Key Outcomes / Delivery Report
 
 Why we built it: Automate spam detection, improve inbox management, and reduce security risks.
 
@@ -105,7 +105,7 @@ Why these methods: Proven efficiency in text classification; lightweight and int
 
 Effectiveness: Can detect classic spam emails with high accuracy; professional or legitimate emails are correctly classified as Ham.
 
-**Future improvements:**
+Future improvements:
 
 Detect promotional emails separately
 
@@ -113,7 +113,7 @@ Use deep learning for higher accuracy
 
 Multi-class classification (ham, spam, promotion, phishing)
 
-**📂 Folder Structure**
+📂 Folder Structure
 spam-email-classifier/
 │
 ├── data/
@@ -130,7 +130,7 @@ spam-email-classifier/
 ├── requirements.txt          # project dependencies
 └── README.md                 # this file
 
-**⚡ Installation**
+⚡ Installation
 
 Clone repository:
 
@@ -157,7 +157,7 @@ Open browser: http://127.0.0.1:5000/
 
 Paste an email → click Check → see Spam/Ham
 
-**📊 Evaluation Metrics**
+📊 Evaluation Metrics
 
 Precision, Recall, F1-score
 
@@ -165,6 +165,6 @@ Both models achieve high accuracy on the Kaggle dataset
 
 Naive Bayes is faster, Logistic Regression handles complex patterns
 
-**📌 License**
+📌 License
 
 MIT License

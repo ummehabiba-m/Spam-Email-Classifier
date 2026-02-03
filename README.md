@@ -114,6 +114,7 @@ Use deep learning for higher accuracy
 Multi-class classification (ham, spam, promotion, phishing)
 
 **📂 Folder Structure**
+
 spam-email-classifier/
 │
 ├── data/

@@ -1,8 +1,8 @@
-📧 Spam Email Classifier
+**📧 Spam Email Classifier**
 
 A machine learning project to detect spam emails using Python, Scikit-learn, and Flask. This project automatically classifies emails as Spam or Ham to help users manage their inbox efficiently and securely.
 
-🚀 Project Motivation
+**🚀 Project Motivation**
 
 Emails are an essential communication tool, but spam and unsolicited emails create several problems:
 
